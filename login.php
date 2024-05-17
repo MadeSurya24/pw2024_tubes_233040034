@@ -69,7 +69,7 @@ if( isset($_POST["login"])) {
   <div class="mb-3 form-check">
     <p class="login-register-text mt-3">
        Don't Have an Account?
-        <a href="registrasi.php">Register</a>
+        <a href="registrasi.php"  class="text-decoration-none">Register</a>
     </p>
   </div>
   <button type="submit" class="btn btn-primary">Login</button>

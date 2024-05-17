@@ -54,7 +54,7 @@ if( isset($_POST["register"])) {
   <div class="mb-3 form-check">
     <p class="login-register-text mt-3">
         Have an Account?
-        <a href="login.php">Log In</a>
+        <a href="login.php" class="text-decoration-none">Log In</a>
     </p>
   </div>
   <button type="submit" class="btn btn-primary">Register</button>
