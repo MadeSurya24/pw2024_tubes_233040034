@@ -59,29 +59,6 @@ if( isset($_POST["register"])) {
   </div>
   <button type="submit" class="btn btn-primary">Register</button>
 </form>
- <!-- <form action="" method="post" class="input-registrasi">
-    <h1>REGISTER</h1> -->
-    <!-- <div class="input-group">
-         <div>
-            <input type="text" placeholder="Email" name="email" id="email">
-        </div>
-        <div>
-            <input type="text" placeholder="Username" name="username" id="username">
-        </div>
-        <div>
-            <input type="password" placeholder="Password" name="password" id="password">
-        </div>
-        <div>
-            <input type="password" placeholder="Konfirmasi Password" name="password2" id="password2">
-        </div>
-        <div>
-            <button type="submit" name="register" class="btn">Register!</button>
-        </div>
-        <p class="login-register-text">Have an Account?
-            <a href="login.php">Log In</a>
-        </p>
-    </div>
-    </form> -->
 </div>
 </body>
 </html>

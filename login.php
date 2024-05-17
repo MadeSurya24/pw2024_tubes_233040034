@@ -74,24 +74,5 @@ if( isset($_POST["login"])) {
   </div>
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
-
-    <!-- <form action="" method="post">
-        <ul>
-            <li>
-                <label for="email">Email : </label>
-                <input type="text" name="email" id="email">
-            </li>
-            <li>
-                <label for="password">Password : </label>
-                <input type="text" name="password" id="password">
-            </li>
-            <li>
-                <button type="submit" name="login">Login</button>
-            </li>
-            <p class="login-register">Don't Have an Account?
-                <a href="registrasi.php">Register</a>
-            </p>
-        </ul>
-    </form> -->
 </body>
 </html>
