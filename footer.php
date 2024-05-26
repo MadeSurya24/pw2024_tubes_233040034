@@ -3,7 +3,7 @@
         <div class="row">
 
             <div class="col-md-4">
-                <h4>Quick Links</h4>
+                <h4><strong>Quick Links</strong></h4>
                 <ul class="menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="keranjang.php">Keranjang</a></li>
@@ -11,7 +11,7 @@
                     <li><a href="#">Akun Saya</a></li>
                 </ul>
                 <hr>
-                <h4>Pelanggan</h4>
+                <h4><strong>Pelanggan</strong></h4>
                 <ul>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="registrasi.php">Register</a></li>
@@ -19,7 +19,7 @@
             </div>
 
             <div class="col-md-4">
-                <h4>Kategori Produk</h4>
+                <h4><strong>Kategori Produk</strong></h4>
                 <ul>
                     <li><a href="#">Rim and Accessories</a></li>
                     <li><a href="#">Suspensions</a></li>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-md-4">
-                <h4>Temukan Kami</h4>
+                <h4><strong>Temukan Kami</strong></h4>
                 <p>
                     <strong>RCB</strong>
                     <br>Jl. Setiabudhi
@@ -41,11 +41,12 @@
                     <br>Kota Bandung
                     <br>083117085497
                     <br>made@gmail.com
+                    <br>
                     <strong>Made Surya</strong>
                 </p>
                 <hr>
-                <h4>Follow Us</h4>
-                <p class="sosmed justify-content-center align-items-center">
+                <h4><strong>Follow Us</strong></h4>
+                <p class="sosmed">
                     <a href="https://web.facebook.com/racingboy.global"><i class='bx bxl-facebook-circle'></i></a>
                     <a href="https://www.tiktok.com/@rcb.global"><i class='bx bxl-tiktok' ></i></a>
                     <a href="https://www.instagram.com/rcb.global"><i class='bx bxl-instagram' ></i></a>
@@ -60,11 +61,9 @@
     <div class="container-copyright">
         <div class="row">
             <div class="col">
-                <p class="left">&copy; RCB | 2024</p>
+                <p >COPYRIGHT 2024 &copy; MadeSurya</p>
             </div>
-            <div class="col">
-                <p class="left">&copy; Dibuat Oleh : I Made Surya Kartika</p>
-            </div>
+
         </div>
     </div>
 </div>

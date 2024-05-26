@@ -25,7 +25,6 @@
 
   </head>
 
-  <>
 
 <!-- Top bar -->
 <div id="top-bar">
@@ -49,32 +48,9 @@
 </div>
 
 <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg mt-2" style="background:rgb(220, 0, 0)">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="img/logo&slide/logo.png" alt="RCB" width="250" height="50">
-    </a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-    <form class="d-flex mx-auto"  role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light" type="submit">
-      <i class='bx bx-search' style="color:palevioletred;"></i>
-      </button>
-    </form>
-      <ul class="navbar-nav ms-auto column-gap-3">
-        <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="#">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">ABOUT US</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#"><i class='bx bx-cart fs-3'></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<?php 
+include 'navbar.php';
+?>
 <!-- Akhir Navbar -->
 
 <!-- Slide -->
@@ -114,139 +90,16 @@
 </div>
 
 
+
+
+
+
+
 <!-- Produk -->
-<div class="container-kategori mt-5">
-  <div class="kategori" style="background-color:rgb(220, 0, 0); padding:5px 10px;">
-    <h5 class="text-center" style="margin-top:5px;">PRODUK</h5>
-  </div>
-</div>
-
-<div class="container-produk mt-4">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/rim/cr55 carbon.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">CR55 CARBON RIM</h6>
-              <p class="card-text">FROM $2,199.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/rim/sp500.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">SP500</h6>
-              <p class="card-text">FROM $198.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/rim/SP522.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">SP522</h6>
-              <p class="card-text">FROM $289.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/suspensions/VD-black.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">VD SERIES</h6>
-              <p class="card-text">FROM $433.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/suspensions/S2LINE.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">S2 LINE</h6>
-              <p class="card-text">FROM $139.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/suspensions/VR.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">VR SERIES</h6>
-              <p class="card-text">FROM $619.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/brakes/S3-Series-red.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">S3 SERIES</h6>
-              <p class="card-text">FROM $101.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/brakes/r1-red.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">R1 SERIES</h6>
-              <p class="card-text">FROM $99.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/brakes/S1-Masterbrakepump-red.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">S1 MASTER BREAK</h6>
-              <p class="card-text">FROM $98.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/footcontrols/RS1SINGLE.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">RS 1 SINGLE</h6>
-              <p class="card-text">FROM $199.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/footcontrols/S1FULLSET.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">S1 FULL SET</h6>
-              <p class="card-text">FROM $199.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-        <div class="card text-center">
-          <img src="img/footcontrols/S2V2SINGLE.png" class="card-img-top mt-2" alt="...">
-            <div class="card-body ">
-              <h6 class="card-title">S2 V2 SINGLE</h6>
-              <p class="card-text">FROM $99.00</p>
-              <a href="#" class="btn d-grid" style="background-color:rgb(220, 0, 0); color:white;">BUY</a>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
+<?php 
+include 'produk.php';
+?>
 <!-- Akhir Produk -->
-
 
 <!-- Footer -->
 
