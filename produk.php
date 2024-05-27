@@ -1,6 +1,6 @@
 <div class="container-kategori mt-5">
   <div class="kategori" style="background-color:rgb(220, 0, 0); padding:5px 10px;">
-    <h5 class="text-center" style="margin-top:5px;">PRODUK</h5>
+    <h5 class="text-center" style="margin-top:5px;">PRODUCT RECOMMENDATION</h5>
   </div>
 </div>
 

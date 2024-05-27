@@ -1,5 +1,5 @@
 <?php 
-require 'functions.php';
+require 'assets/functions.php';
 
 if( isset($_POST["register"])) {
 

@@ -19,7 +19,7 @@
             </div>
 
             <div class="col-md-4">
-                <h4><strong>Kategori Produk</strong></h4>
+                <h4><strong>PRODUCT CATEGORY</strong></h4>
                 <ul>
                     <li><a href="#">Rim and Accessories</a></li>
                     <li><a href="#">Suspensions</a></li>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-md-4">
-                <h4><strong>Temukan Kami</strong></h4>
+                <h4><strong>ABOUT US</strong></h4>
                 <p>
                     <strong>RCB</strong>
                     <br>Jl. Setiabudhi
