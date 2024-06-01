@@ -1,15 +1,15 @@
 <?php 
 require 'assets/functions.php';
 
-if( isset($_POST["register"])) {
-
-    if(registrasi($_POST) > 0) {
-        echo "<script>
-                alert('Registrasi Berhasil!');
-              </script>";
-    } else {
-        echo mysqli_error($conn);
-    }
+if (isset($_POST["registrasi"])) {
+  if(registrasi($_POST) > 0) {
+    echo "<script>
+            alert('user baru berhasil ditambahkan, silahkan login!');
+            document.location.href = 'login.php'
+        </script>";
+  }else{
+    echo mysqli_error($conn);
+  }
 }
 
 ?>
@@ -17,7 +17,7 @@ if( isset($_POST["register"])) {
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -30,34 +30,42 @@ if( isset($_POST["register"])) {
 
 
     <title>Halaman Registrasi</title>
-</head>
+
 <body>
  <div class="container">
- <form class="mx-auto">
+ <form action="" method="POST" class="mx-auto">
     <h4 class="text-center">Register</h4>
-  <div class="mb-3 mt-5">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputUsername" class="form-label">Username</label>
-    <input type="username" class="form-control" id="exampleInputUsername">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword2" class="form-label">Konfirmasi Password</label>
-    <input type="password2" class="form-control" id="exampleInputPassword2">
-  </div>
-  <div class="mb-3 form-check">
-    <p class="login-register-text mt-3">
-        Have an Account?
-        <a href="login.php" class="text-decoration-none">Log In</a>
-    </p>
-  </div>
-  <button type="submit" class="btn btn-primary">Register</button>
+
+      <!-- <div class="mb-3 mt-5">
+        <label>Email</label>
+        <input type="email" name="email" id="email" class="form-control" required>
+      </div> -->
+    <ul>
+      <li class="mb-3">
+        <label for="username">Username</label>
+        <input type="username" name="username" id="username" class="form-control" required>
+      </li>
+
+      <li class="mb-3">
+        <label for="password1">Password</label>
+        <input type="password" name="password1" id="password1" class="form-control" required>
+      </li>
+
+      <li class="mb-3">
+        <label for="password2">Konfirmasi Password</label>
+        <input type="password" name="password2" id="password2" class="form-control" required>
+      </li>
+
+      <li class="mb-3 form-check">
+        <p class="login-register-text mt-3">
+            Have an Account?
+            <a href="login.php" class="text-decoration-none">Log In</a>
+        </p>
+      </li>
+      <li>
+        <button type="submit" name="register" class="btn btn-primary">Register</button>
+      </li>
+      </ul>
 </form>
 </div>
 </body>

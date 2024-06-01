@@ -147,21 +147,34 @@ include '../assets/functions.php'
                         
                         if(isset($_GET['halaman']))
                         {
+                            // halaman kategori
                             if($_GET['halaman']=="kategori")
                             {
                                 include 'kategori.php';
                             }
+
+                            // halaman produk
                             elseif($_GET['halaman']=="produk")
                             {
                                 include 'produk.php';
                             }
+
+                            // halaman pembelian
                             elseif($_GET['halaman']=="pembelian")
                             {
                                 include 'pembelian.php';
                             }
+
+                            // halaman user
                             elseif($_GET['halaman']=="user")
                             {
                                 include 'user.php';
+                            }
+
+                            // halaman detail pembelian
+                            elseif($_GET['halaman']=="detail_pembelian")
+                            {
+                                include 'detail/detail_pembelian.php';
                             }
                         }
                         else

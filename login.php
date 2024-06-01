@@ -1,26 +1,15 @@
 <?php 
+// session_start();
+
+// if(isset($_SESSION['login'])) {
+//   header("Location: index.php");
+//   exit;
+// }
 
 require 'assets/functions.php';
 
 if( isset($_POST["login"])) {
-
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
-
-    // cek username
-    if( mysqli_num_rows($result) === 1) {
-
-        // cek password
-        $row = mysqli_fetch_assoc($result);
-        if( password_verify($password, $row["password"])) {
-            header("Location: index.php");
-            exit;
-        }
-    }
-
-    $error = true;
+  $login = login($_POST);
 }
 
 ?>
@@ -46,33 +35,40 @@ if( isset($_POST["login"])) {
 <body>
     <!-- <h1>Halaman Login</h1> -->
 
-
-    <?php if( isset($error)) : ?>
-        <p style="color: red; font-style:italic;">Email / Password Salah</p>
-    <?php endif; ?>
-
     <div class="container">
- <form class="mx-auto">
-    <h4 class="text-center">Login</h4>
-  <div class="mb-3 mt-5">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputUsername" class="form-label">Username</label>
-    <input type="username" class="form-control" id="exampleInputUsername">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <p class="login-register-text mt-3">
-       Don't Have an Account?
-        <a href="registrasi.php"  class="text-decoration-none">Register</a>
-    </p>
-  </div>
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>
+      <?php if( isset($login['error'])) : ?>
+          <p style="color: red; font-style:italic;">Email / Password Salah</p>
+      <?php endif; ?>
+
+        <form action="" method="POST" class="mx-auto">
+            <h4 class="text-center">Login</h4>
+
+              <!-- <div class="mb-3 mt-5">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div> -->
+
+              <div class="mb-3">
+                <label for="exampleInputUsername" class="form-label">Username</label>
+                <input type="username" name="username" class="form-control" id="exampleInputUsername">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+              </div>
+
+              <div class="mb-3 form-check">
+                <p class="login-register-text mt-3">
+                  Don't Have an Account?
+                    <a href="registrasi.php"  class="text-decoration-none">Register</a>
+                </p>
+              </div>
+
+              <div>
+                <button type="submit" name="login" class="btn btn-primary" >Login</button>
+              </div>
+              
+        </form>
 </body>
 </html>
