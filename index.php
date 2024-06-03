@@ -7,7 +7,14 @@
 // }
 
 require 'assets/functions.php';
+$produk = array();
+$ambil = koneksi()->query("SELECT * FROM produk JOIN kategori
+                           ON produk.id_kategori=kategori.id_kategori LIMIT 12 ");
 
+while($pecah = $ambil->fetch_assoc())
+{
+  $produk[]=$pecah;
+}
 
 ?>
 
@@ -25,13 +32,6 @@ require 'assets/functions.php';
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <link rel="stylesheet" href="css/index.css">
-
-<!-- Owl  carousel CSS-->
-    <link rel="stylesheet" href="assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/owl.theme.default.min.css">
-
-<!-- Owl carousel js -->
-    <script src="assets/owl.carousel.min.js"></script>
 
 <!-- Main.js -->
     <script src="main.js"></script>
@@ -71,9 +71,9 @@ require 'assets/functions.php';
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-    <form class="d-flex mx-auto"  role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light" type="submit">
+    <form action="" method="POST" class="d-flex mx-auto"  role="search">
+      <input class="form-control me-2 keyword" type="search" name="keyword" placeholder="Search" autocomplete="off" autofocus aria-label="Search">
+      <button class="btn btn-outline-light tombol-cari" type="submit">
       <i class='bx bx-search' style="color:palevioletred;"></i>
       </button>
     </form>
@@ -136,6 +136,11 @@ include 'produk.php';
 ?>
 <!-- Akhir Produk -->
 
+<!-- Contact Us -->
+<?php 
+include 'kontak.php';
+?>
+
 <!-- Footer -->
 
 <?php 
@@ -143,5 +148,7 @@ include 'footer.php';
 ?>
 
 <!-- Akhir Footer -->
+
+<script src="js/script.js"></script>
   </body>
 </html>

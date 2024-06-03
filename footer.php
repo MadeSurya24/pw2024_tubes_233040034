@@ -1,5 +1,5 @@
-<div id="footer">
-    <div class="container-footer">
+<div id="footer" style="width:100%;">
+    <div class="container-footer" >
         <div class="row">
 
             <div class="col-md-4">
@@ -57,7 +57,7 @@
     </div>
 </div>
 
-<div id="copyright">
+<div id="copyright" style="width:100%;">
     <div class="container-copyright">
         <div class="row">
             <div class="col">

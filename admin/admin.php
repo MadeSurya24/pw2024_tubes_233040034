@@ -1,6 +1,14 @@
 <?php
 
-include '../assets/functions.php'
+session_start();
+include '../assets/functions.php';
+
+if(!isset($_SESSION['admin']))
+{
+    echo "<script>alert('anda harus login');</script>";
+    echo "<script>location='login.php';</script>";
+    exit();
+}
 
 ?>
 
@@ -219,6 +227,13 @@ include '../assets/functions.php'
                             {
                                 include 'user.php';
                             }
+
+                            // halaman logout
+                            elseif($_GET['halaman']=="logout")
+                            {
+                                include 'logout.php';
+                            }
+
 
                            
                         }
