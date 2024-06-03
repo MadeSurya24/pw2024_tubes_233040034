@@ -47,11 +47,11 @@ function login($data)
     ];
 }
 
-function registrasi($data) {
-    $conn = koneksi();
+// function registrasi($data) {
+//     $conn = koneksi();
 
-    $username = htmlspecialchars($data["username"]);
-    $password1 = mysqli_real_escape_string($data["password1"]);
-    var_dump($password1);
-}
+//     $username = htmlspecialchars($data["username"]);
+//     // $password1 = mysqli_real_escape_string($data["password1"]);
+//     var_dump($password1);
+// }
 ?>

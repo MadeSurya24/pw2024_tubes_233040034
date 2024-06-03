@@ -153,11 +153,54 @@ include '../assets/functions.php'
                                 include 'kategori.php';
                             }
 
+                            // halaman tambah kategori
+                            elseif($_GET['halaman']=="tambah_kategori")
+                            {
+                                include 'tambah/tambah_kategori.php';
+                            }
+
+                            // halaman edit kategori
+                             elseif($_GET['halaman']=="edit_kategori")
+                             {
+                                 include 'edit/edit_kategori.php';
+                             }
+                            
+                            // halaman hapus kategori
+                             elseif($_GET['halaman']=="hapus_kategori")
+                             {
+                                 include 'hapus/hapus_kategori.php';
+                             }
+
+
                             // halaman produk
                             elseif($_GET['halaman']=="produk")
                             {
                                 include 'produk.php';
                             }
+
+                             // halaman tambah produk
+                             elseif($_GET['halaman']=="tambah_produk")
+                             {
+                                 include 'tambah/tambah_produk.php';
+                             }
+
+                              // halaman edit produk
+                              elseif($_GET['halaman']=="edit_produk")
+                              {
+                                  include 'edit/edit_produk.php';
+                              }
+                            
+                             // halaman hapus produk
+                             elseif($_GET['halaman']=="hapus_produk")
+                             {
+                                 include 'hapus/hapus_produk.php';
+                             }
+
+                            //  halaman detail produk
+                             elseif($_GET['halaman']=="detail_produk")
+                             {
+                                 include 'detail/detail_produk.php';
+                             }                             
 
                             // halaman pembelian
                             elseif($_GET['halaman']=="pembelian")
@@ -165,17 +208,19 @@ include '../assets/functions.php'
                                 include 'pembelian.php';
                             }
 
+                             // halaman detail pembelian
+                             elseif($_GET['halaman']=="detail_pembelian")
+                             {
+                                 include 'detail/detail_pembelian.php';
+                             }
+
                             // halaman user
                             elseif($_GET['halaman']=="user")
                             {
                                 include 'user.php';
                             }
 
-                            // halaman detail pembelian
-                            elseif($_GET['halaman']=="detail_pembelian")
-                            {
-                                include 'detail/detail_pembelian.php';
-                            }
+                           
                         }
                         else
                         {
@@ -247,6 +292,14 @@ include '../assets/functions.php'
 
     <!-- Page level custom scripts -->
     <script src="../assets/js/demo/datatables-demo.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".btn-tambah").on("click", function(){
+                $(".input-foto").append("<input type='file' name='foto[]' class='form-control'> ");
+            })
+        })
+    </script>
 
 </body>
 </html>

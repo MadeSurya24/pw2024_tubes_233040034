@@ -16,7 +16,10 @@ while($pecah = $ambil->fetch_assoc())
     <h5><b>Halaman Produk</b></h5>
 </div>
 
-<div class="card shadow bg-white p-5">
+<a href="admin.php?halaman=tambah_produk" class="btn btn-sm btn-success">Tambah</a>
+
+
+<div class="card shadow bg-white mt-3 p-5">
     <table class="table table-boardered table-hover table-striped" id="tables">
         <thead>
             <tr>
@@ -36,11 +39,14 @@ while($pecah = $ambil->fetch_assoc())
                 <td><?php echo $value['nama_kategori']; ?></td>
                 <td><?php echo $value['nama_produk']; ?></td>
                 <td><?php echo $value['harga_produk']; ?></td>
-                <td><?php echo $value['foto_produk']; ?></td>
+                <td class="text-center">
+                    <img width="150" src="../img/<?php echo $value['foto_produk'] ?>" alt="foto_produk">
+                </td>
                 <td><?php echo $value['deskripsi_produk']; ?></td>
-                <td class="text-center" width="150">
-                    <a href="" class="btn btn-sm btn-primary">Edit</a>
-                    <a href="" class="btn btn-sm btn-danger">Hapus</a>
+                <td class="text-center" width="200">
+                    <a href="admin.php?halaman=edit_produk&id=<?php echo $value['id_produk']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="admin.php?halaman=hapus_produk&id=<?php echo $value['id_produk']; ?>" class="btn btn-sm btn-danger">Hapus</a>
+                    <a href="admin.php?halaman=detail_produk&id=<?php echo $value['id_produk']; ?>" class="btn btn-sm btn-info">Detail</a>
                 </td>
             </tr>
             <?php endforeach ?>
