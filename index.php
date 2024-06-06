@@ -16,6 +16,10 @@ while($pecah = $ambil->fetch_assoc())
   $produk[]=$pecah;
 }
 
+if(isset($_POST['cari'])){
+  $produk = cari($_POST['keyword']);
+}
+
 ?>
 
 
@@ -72,7 +76,7 @@ while($pecah = $ambil->fetch_assoc())
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
     <form action="" method="POST" class="d-flex mx-auto"  role="search">
-      <input class="form-control me-2 keyword" type="search" name="keyword" placeholder="Search" autocomplete="off" autofocus aria-label="Search">
+      <input class="form-control me-2 keyword" type="text" name="keyword" placeholder="Search" autocomplete="off" autofocus aria-label="Search">
       <button class="btn btn-outline-light tombol-cari" type="submit">
       <i class='bx bx-search' style="color:palevioletred;"></i>
       </button>
@@ -149,6 +153,6 @@ include 'footer.php';
 
 <!-- Akhir Footer -->
 
-<script src="js/script.js"></script>
+<script src="js/script2.js"></script>
   </body>
 </html>

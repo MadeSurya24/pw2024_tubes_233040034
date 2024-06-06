@@ -8,9 +8,13 @@ if(isset($_POST['login']))
 {
     $username = $_POST['username'];
     $password = sha1($_POST['password']);
+    // $username = $_POST['username'];
+    // $password = sha1($_POST['password']);
 
     $ambil = koneksi()->query("SELECT * FROM admin
                                WHERE username='$username' AND password='$password'");
+    // $ambil = koneksi()->query("SELECT * FROM admin
+    //                            WHERE username='$username' AND password='$password'");
 
     $akun = $ambil->num_rows;
 

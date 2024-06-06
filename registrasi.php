@@ -1,14 +1,12 @@
 <?php 
 require 'assets/functions.php';
 
-if (isset($_POST["registrasi"])) {
+if(isset($_POST['registrasi'])) {
   if(registrasi($_POST) > 0) {
-    echo "<script>
-            alert('user baru berhasil ditambahkan, silahkan login!');
-            document.location.href = 'login.php'
-        </script>";
-  }else{
-    echo mysqli_error($conn);
+    echo "<script>alert('registrasi berhasil');</script>";
+    echo "<script>location='login.php';</script>";
+  }else {
+    echo 'user gagal ditambahkan';
   }
 }
 
@@ -47,8 +45,8 @@ if (isset($_POST["registrasi"])) {
       </li>
 
       <li class="mb-3">
-        <label for="password1">Password</label>
-        <input type="password" name="password1" id="password1" class="form-control" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control" required>
       </li>
 
       <li class="mb-3">
@@ -63,7 +61,7 @@ if (isset($_POST["registrasi"])) {
         </p>
       </li>
       <li>
-        <button type="submit" name="register" class="btn btn-primary">Register</button>
+        <button type="submit" name="registrasi" class="btn btn-primary">Register</button>
       </li>
       </ul>
 </form>

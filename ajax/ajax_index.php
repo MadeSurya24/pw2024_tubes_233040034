@@ -1,11 +1,10 @@
-<div class="container-kategori mt-5">
-  <div class="kategori" style="background-color:rgb(220, 0, 0); padding:5px 10px;">
-    <h5 class="text-center" style="margin-top:5px;">PRODUCT RECOMMENDATION</h5>
-  </div>
-</div>
+<?php
+require '../assets/functions.php';
 
-<div class="container-produk m-4">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+$produk = cari($_GET['keyword']);
+?>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
   <?php foreach ($produk as $key => $value): ?>
     <div class="col-lg-2 col-md-2 col-sm-4 col-6">
         <div class="card text-center">
@@ -18,6 +17,4 @@
         </div>
     </div>
     <?php endforeach ?>
-  </div>
 </div>
-   

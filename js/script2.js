@@ -10,7 +10,7 @@ keyword.addEventListener('keyup', function() {
     // ajax
   
 
-    fetch('../ajax/ajax_cari.php?keyword=' + keyword.value)
+    fetch('../ajax/ajax_index.php?keyword=' + keyword.value)
     .then((response) => response.text())
     .then((response) => (container.innerHTML = response));
 

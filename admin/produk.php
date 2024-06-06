@@ -7,6 +7,9 @@ while($pecah = $ambil->fetch_assoc())
     $produk[] = $pecah;
 }
 
+// if(isset($_POST['cari'])){
+//     $produk = cari($_POST['keyword']);
+//   }
 
 ?>
 
@@ -19,7 +22,7 @@ while($pecah = $ambil->fetch_assoc())
 <a href="admin.php?halaman=tambah_produk" class="btn btn-sm btn-success">Tambah</a>
 
 
-<div class="card shadow bg-white mt-3 p-5">
+<div class="container-produk card shadow bg-white mt-3 p-5">
     <table class="table table-boardered table-hover table-striped" id="tables">
         <thead>
             <tr>
