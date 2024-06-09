@@ -10,7 +10,8 @@ body {
     font-weight: 700;
     font-style: bold;
     font-size: 20px;
-    color: white;
+    background-color: #ccc;
+
   }
 
 /*   */
@@ -66,6 +67,72 @@ body {
 #top-bar ul.top-menu > li a:hover{
     color: black;
 }
+
+/* Page Produk */
+.page-produk {
+  margin: 2rem 0;
+  
+}
+.breadcrumb {
+  padding: 5px 8px;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0 , 5) ;
+}
+
+.breadcrumb> li + li:before{
+  content: "\00a0 > \00a0";
+  color: #ccc;
+}
+
+.page-produk .card {
+  box-shadow: 0 1px 5px rgba(0, 0, 0 , 5) ;
+}
+
+.page-produk .card-header{
+  font-weight: 700;
+}
+
+.page-produk .nav a:hover{
+  background-color: #eee;
+}
+
+.page-produk .nav a{
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.page-produk .box,
+.page-produk .card-produk{
+  margin-bottom: 2rem;
+}
+
+
+.detail-produk .detail-form {
+  margin-bottom: 2rem;
+  
+}
+
+.detail-produk .detail-form h3{
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.page-keranjang {
+  margin: 2rem 0;
+  
+}
+
+.page-keranjang .card {
+  box-shadow: 0 1px 5px rgba(0, 0, 0 , 5) ;
+}
+
+.page-keranjang .box {
+  margin-bottom: 2rem;
+}
+
 
 /* .navbar ul li:before{
   content: "";
@@ -216,6 +283,7 @@ body {
   font-size: 14px;
   text-align: center;
   align-items: center;
+  color: white;
 }
 
 #copyright p{
@@ -223,6 +291,7 @@ body {
   font-size: 14px;
   text-align: center;
   align-items: center;
+  color: white;
 }
 /* Responsive */
 @media(max-width: 991px){

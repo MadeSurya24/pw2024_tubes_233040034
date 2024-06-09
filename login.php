@@ -37,7 +37,7 @@ if( isset($_POST["login"])) {
 
     <div class="container">
       <?php if( isset($login['error'])) : ?>
-          <p style="color: red; font-style:italic;">Email / Password Salah</p>
+          <p style="color: red; font-style:italic;">Username / Password Salah</p>
       <?php endif; ?>
 
         <form action="" method="POST" class="mx-auto">

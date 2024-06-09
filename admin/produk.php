@@ -38,7 +38,7 @@ while($pecah = $ambil->fetch_assoc())
         <tbody>
             <?php foreach ($produk as $key => $value): ?>
             <tr>
-                <td width="50"><?php echo $key+1; ?></td>
+                <td width="25"><?php echo $key+1; ?></td>
                 <td><?php echo $value['nama_kategori']; ?></td>
                 <td><?php echo $value['nama_produk']; ?></td>
                 <td><?php echo $value['harga_produk']; ?></td>

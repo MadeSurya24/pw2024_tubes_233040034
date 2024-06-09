@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+session_start();
 
 // if(!isset($_SESSION['login'])) {
 //   header("Location: login.php");
@@ -57,7 +57,7 @@ if(isset($_POST['cari'])){
         <ul class="top-menu">
           <li><a href="registrasi.php">Registrasi</a></li>
           <li><a href="login.php">Login</a></li>
-          <li><a href="profile.php">Profile</a></li>
+
         </ul>
       </div>
 
@@ -66,38 +66,7 @@ if(isset($_POST['cari'])){
 </div>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg mt-2 sticky-top" style="background:rgb(220, 0, 0)">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="img/logo&slide/logo.png" alt="RCB" width="200" height="50">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-    <form action="" method="POST" class="d-flex mx-auto"  role="search">
-      <input class="form-control me-2 keyword" type="text" name="keyword" placeholder="Search" autocomplete="off" autofocus aria-label="Search">
-      <button class="btn btn-outline-light tombol-cari" type="submit">
-      <i class='bx bx-search' style="color:palevioletred;"></i>
-      </button>
-    </form>
-      <ul class="navbar-nav ms-auto column-gap-3">
-        <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="#">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">ABOUT US</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">PRODUCT</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#"><i class='bx bx-cart fs-3'></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<?php include 'include/navbar.php'; ?>
 <!-- Akhir Navbar -->
 
 <!-- Slide -->
@@ -136,19 +105,19 @@ if(isset($_POST['cari'])){
 
 <!-- Produk -->
 <?php 
-include 'produk.php';
+include 'include/produk.php';
 ?>
 <!-- Akhir Produk -->
 
 <!-- Contact Us -->
 <?php 
-include 'kontak.php';
+include 'include/kontak.php';
 ?>
 
 <!-- Footer -->
 
 <?php 
-include 'footer.php';
+include 'include/footer.php';
 ?>
 
 <!-- Akhir Footer -->

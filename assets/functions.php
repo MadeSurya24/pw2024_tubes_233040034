@@ -43,7 +43,6 @@ function registrasi($data)
   $username = htmlspecialchars(strtolower($data['username']));
   $password = mysqli_real_escape_string($conn, $data['password']);
   $password2 = mysqli_real_escape_string($conn, $data['password2']);
-  $id_role = 1;
 
   //jika username / password kosong
   if (empty($username) || empty($password) || empty($password2)) {
@@ -90,7 +89,7 @@ function registrasi($data)
   //Inser ke table user
   $query = "INSERT INTO user 
               VALUES
-              (null, '$username', '$password_baru', '$id_role')
+              (null, '$username', '$password_baru')
               ";
   mysqli_query($conn, $query) or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);

@@ -10,7 +10,7 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2397080556875!2d106.50853350000001!3d-6.232098399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e420743c7738ed5%3A0x515accceeeac076f!2sPT.%20Enwan%20Multi%20Partindo!5e0!3m2!1sid!2sid!4v1717428982628!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
-        <div class="col-md-6 kontak-form">
+        <div class="col-md-5 kontak-form">
            <form action="" method="POST">
             <div class="card">
                 <div class="card-body">

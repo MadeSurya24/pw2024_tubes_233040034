@@ -11,7 +11,7 @@ if(isset($_POST['login']))
     // $username = $_POST['username'];
     // $password = sha1($_POST['password']);
 
-    $ambil = koneksi()->query("SELECT * FROM admin
+    $ambil = koneksi()->query("SELECT * FROM user
                                WHERE username='$username' AND password='$password'");
     // $ambil = koneksi()->query("SELECT * FROM admin
     //                            WHERE username='$username' AND password='$password'");
@@ -20,7 +20,7 @@ if(isset($_POST['login']))
 
     if($akun==1)
     {
-        $_SESSION['admin'] = $ambil->fetch_assoc();
+        $_SESSION['user'] = $ambil->fetch_assoc();
         echo "<script>alert('login berhasil');</script>";
         echo "<script>location='admin.php';</script>";
     }

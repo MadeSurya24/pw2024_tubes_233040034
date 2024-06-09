@@ -1,14 +1,14 @@
 <?php
 
-session_start();
+// session_start();
 include '../assets/functions.php';
 
-if(!isset($_SESSION['admin']))
-{
-    echo "<script>alert('anda harus login');</script>";
-    echo "<script>location='login.php';</script>";
-    exit();
-}
+// if(!isset($_SESSION['admin']))
+// {
+//     echo "<script>alert('anda harus login');</script>";
+//     echo "<script>location='login.php';</script>";
+//     exit();
+// }
 
 if(isset($_POST['cari'])){
     $produk = cari($_POST['keyword']);
