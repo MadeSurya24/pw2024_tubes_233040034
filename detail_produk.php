@@ -2,7 +2,7 @@
 
 require 'assets/functions.php';
 
-$id_produk = $_GET['id'];
+$id_produk = $_GET['idproduk'];
 
 $ambil = koneksi()->query("SELECT * FROM produk
                           WHERE id_produk='$id_produk' ");
@@ -39,7 +39,7 @@ while($tiap = $ambil->fetch_assoc())
 <!-- Akhir Navbar -->
 
 
-<section class="page-produk">
+<section class="detail-produk">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="index.php" class="link-secondary" style="text-decoration: none;">Home</a></li>
@@ -49,56 +49,37 @@ while($tiap = $ambil->fetch_assoc())
         <div class="row">
 
             <div class="col-md-3">
-                <div class="card">
-                    <div class="card-header text-center ">Kategori Produk</div>
-                    <div class="card-body">
-                        <ul class="nav navpills flex-column text-center">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link link-secondary">RIM AND ACCESSORIES</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link  link-secondary">SUSPENSION</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link link-secondary">BRAKES SYSTEM</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link link-secondary">FOOT CONTROLS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link link-secondary">HAND CONTROLS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link link-secondary">DRIVE CHAIN SYSTEM</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link link-secondary">BODY PART</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link link-secondary">APPAREL</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+               <?php include 'include/sidebar.php' ?>
             </div>
 
             <div class="col-md-9 detail-produk">
 
             <div class="row">
+                <div id="carouselExampleDark" class="carousel carousel-dark slide m-2" style="width:25rem;">
+              
+                    <div class="carousel-inner" style="width:26rem;">
+                    <?php foreach ($foto_produk as $key => $value): ?>
+                        <div class="carousel-item active" style="width: 25rem;">
+                            <img src="img/<?php echo $value['nama_foto_produk'] ?>" class="card" style="width:25rem;" alt="...">
+                        </div>
+                        <?php endforeach ?>  
+                    </div>
 
-                <div class="col-6">
-                <?php foreach ($foto_produk as $key => $value): ?>
-                  <div class="card" style="width: 26rem;">
-                    <img src="img/<?php echo $value['nama_foto_produk'] ?>" alt="">
-                  </div>
-                <?php endforeach ?>  
+                    <button class="carousel-control-prev"  type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
 
-                <div class="col-6 detail-form">
+                <div class="col-6 m-1 p-7 detail-form">
                     <form action="" method="POST">
                         <div class="card">
                             <div class="card-body">
-                                <h3>Nama Produk</h3>
+                                <h3><?php echo $detailproduk['nama_produk']; ?></h3>
                                 <div class="form-group row">
                                     <label for="jumlah" class="col-sm-3 col-form-label">
                                        Jumlah : 
@@ -112,17 +93,21 @@ while($tiap = $ambil->fetch_assoc())
                                        Stok : 
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="number" name="Stok" class="form-control" value="">
+                                        <input disabled type="number" name="Stok" class="form-control" value="<?php echo $detailproduk['stok_produk']; ?>">
                                     </div>
                                 </div>
-
-                                <h5>$200</h5>
+                                <div class="form-group row">
+                                    <label for="harga" class="col-sm-3 col-form-label">
+                                       Harga
+                                    </label>
+                                    <h5>Rp.<?php echo number_format($detailproduk['harga_produk']); ?></h5>
+                                </div>
                             </div>
-                            <div class="card-footer text-right">
+                            <!-- <div class="card-footer text-right">
                                 <button name="beli" class="btn btn-success">
                                     <i class='bx bx-cart'></i>
                                 </button>
-                            </div>
+                            </div> -->
                         </div>
                     </form>
                 </div>
@@ -150,6 +135,7 @@ while($tiap = $ambil->fetch_assoc())
 include 'include/footer.php';
 ?>
 <!-- Akhir Footer -->
-    
+
+<script scr="js/main.js"></script>
 </body>
 </html>

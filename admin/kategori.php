@@ -19,7 +19,7 @@ while($pecah = $ambil->fetch_assoc())
 
 <div class="card shadow bg-white mt-3">
     <div class="card-body">
-        <table class="table table-bordered table-hover table-striped" id="tables">
+        <table class="table table-bordered table-hover table-striped" >
             <thead>
                 <tr>
                     <th>No</th>

@@ -68,6 +68,31 @@ body {
     color: black;
 }
 
+/* navbar
+#btn-menu{
+  display: inline-block;
+}
+.navbar .navbar-menu{
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  background-color: rgb(220, 0, 0 );
+  width: 30rem;
+  height: 100vh;
+  transition: 0.3s;
+}
+.navbar .navbar-menu.active{
+  right: 0;
+}
+
+.navbar .navbar-menu a{
+  color: white;
+  display: block;
+  margin: 1.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+} */
+
 /* Page Produk */
 .page-produk {
   margin: 2rem 0;
@@ -183,6 +208,35 @@ body {
   margin-top: 15px;
 }
 
+/* Profile pelanggan */
+.page-profile .card{
+  box-shadow: 0 1px 5px rgba(0, 0, 0 , .7);
+}
+
+
+.page-profile .card-title h2{
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.page-profile .nav{
+  text-align: center;
+}
+
+.page-profile .nav a{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.page-profile .nav a:hover{
+  background-color: #eee;
+}
+
+.detail-produk{
+  margin-top: 2rem;
+}
 
 /* Footer */
 #footer{
@@ -294,6 +348,12 @@ body {
   color: white;
 }
 /* Responsive */
+@media(max-width:1366px)
+{
+  html{
+    font-size: 90%;
+  }
+}
 @media(max-width: 991px){
     #top-bar{
         font-size: 12px;
@@ -318,4 +378,24 @@ body {
     #copyright{
       font-size: 12px;
     }
+    .container-kontak{
+      width: 50%;
+      margin-left: 10rem;
+    }
+    .detail-form{
+      width: 100%;
+    }
+}
+@media(max-width: 768px)
+{
+  html{
+    font-size: 75%;
+  }
+}
+
+@media(max-width: 450px)
+{
+  html{
+    font-size: 65%;
+  }
 }

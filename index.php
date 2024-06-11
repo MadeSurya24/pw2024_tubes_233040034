@@ -36,6 +36,8 @@ if(isset($_POST['cari'])){
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <link rel="stylesheet" href="css/index.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 
 <!-- Main.js -->
     <script src="main.js"></script>
@@ -57,6 +59,7 @@ if(isset($_POST['cari'])){
         <ul class="top-menu">
           <li><a href="registrasi.php">Registrasi</a></li>
           <li><a href="login.php">Login</a></li>
+          <li><a href="logout.php">Logout</a></li>
 
         </ul>
       </div>
@@ -123,5 +126,8 @@ include 'include/footer.php';
 <!-- Akhir Footer -->
 
 <script src="js/script2.js"></script>
+<script scr="js/main.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
   </body>
 </html>

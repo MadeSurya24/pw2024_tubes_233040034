@@ -39,6 +39,8 @@ if(isset($_POST['cari'])){
      <!-- Custom styles for this page -->
      <link href="../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 
 </head>
 
@@ -63,8 +65,9 @@ if(isset($_POST['cari'])){
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="admin.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <i class='bx bxs-store' ></i>
+                    <span>Admin</span>
+                </a>
             </li>
 
             <!-- Divider -->
@@ -72,31 +75,31 @@ if(isset($_POST['cari'])){
 
             <li class="nav-item">
                 <a class="nav-link" href="admin.php?halaman=kategori">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class='bx bxs-category' ></i>
                     <span>Kategori</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="admin.php?halaman=produk">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class='bx bxs-package'></i>
                     <span>Produk</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="admin.php?halaman=pembelian">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class='bx bx-cart-add'></i>
                     <span>Pembelian</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="admin.php?halaman=user">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>User</span></a>
+                <i class='bx bxs-user'></i>                   
+                 <span>User</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="admin.php?halaman=logout">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class='bx bxs-log-out'></i>
                     <span>Logout</span></a>
             </li>
 
@@ -242,7 +245,7 @@ if(isset($_POST['cari'])){
                         }
                         else
                         {
-                            include 'dashboard.php';
+                            include 'profil_admin.php';
                         }
                         
                         ?>

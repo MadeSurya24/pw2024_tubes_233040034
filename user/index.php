@@ -3,13 +3,10 @@ session_start();
 
 require '../assets/functions.php';
 
-$id_user = $_SESSION['user'];
-$ambil = koneksi()->query("SELECT * FROM user WHERE id_user='$id_user'");
-$pecah = $ambil->fetch_assoc();
+$id_user = $_SESSION['user']['id_user'];
 
-echo "<pre>";
-print_r($pecah);
-echo "</pre>";
+$ambil = koneksi()->query("SELECT * FROM user WHERE id_user= '$id_user' ");
+$pecah = $ambil->fetch_assoc();
 
 
 
@@ -43,9 +40,9 @@ echo "</pre>";
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-    <form action="" method="POST" class="d-flex mx-auto"  role="search">
-      <input class="form-control me-2 keyword" type="text" name="keyword" placeholder="Search" autocomplete="off" autofocus aria-label="Search">
-      <button class="btn btn-outline-light tombol-cari" type="submit">
+    <form action="../produk.php" method="GET" class="d-flex mx-auto"  role="search">
+      <input class="form-control me-2 keyword" type="search" id="search-box" name="keyword" placeholder="Search" autocomplete="off" autofocus aria-label="Search">
+      <button class="btn btn-outline-light " type="submit">
       <i class='bx bx-search' style="color:palevioletred;"></i>
       </button>
     </form>
@@ -53,15 +50,15 @@ echo "</pre>";
         <li class="nav-item">
           <a class="nav-link active text-light" aria-current="page" href="../index.php">HOME</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link text-light" href="#">ABOUT US</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link text-light" href="../produk.php">PRODUCT</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link text-light" href="../keranjang.php"><i class='bx bx-cart fs-3'></i></a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link text-light" href="index.php" id="btn-user">
             <i class='bx bxs-user' style="font-size: 30px;"></i>
@@ -75,7 +72,7 @@ echo "</pre>";
 <!-- Akhir Navbar -->
 
 
-<section class="page-produk">
+<section class="page-profile mt-3">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="../index.php" class="link-secondary" style="text-decoration: none;">Home</a></li>
@@ -87,23 +84,85 @@ echo "</pre>";
             <div class="col-md-3">
 
                 <div class="card">
+                    
                     <div class="card-header">
                         <div class="img">
-                            <img src="" alt="">
+                            <img src="../foto_pelanggan/<?php echo $pecah['foto_pelanggan']; ?>" class="rounded-circle rounded mx-auto d-block" width="150" alt="">
+                        </div>
+                        <div class="card-title">
+                            <h2><?php echo $pecah['username']; ?></h2>
                         </div>
                     </div>
+
+                    <div class="card-body">
+
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="index.php" class="nav-link">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.php?page=setting" class="nav-link">
+                                    Edit Profil
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin.php?halaman=logout">
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
                 </div>
 
             </div>
 
-
             <div class="col-md-9">
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <?php
+
+                        if(isset($_GET['page']))
+                        {
+                            if($_GET['page']=="setting")
+                            {
+                                include 'setting.php';
+                            }
+
+                            elseif($_GET['page']=="ubah_password")
+                            {
+                                include 'ubah_password.php';
+                            }
+
+                            elseif($_GET['halaman']=="logout")
+                            {
+                                include 'logout.php';
+                            }
+                        }else
+                        {
+                            include 'home.php';
+                        }
+
+                        ?>
+
+
+                    </div>
+                </div>
                 
             </div>
 
         </div>
 
     </div>
+
+
+            
+
 </section>
 
 <!-- Footer -->
@@ -178,6 +237,7 @@ echo "</pre>";
     </div>
 </div>
 <!-- Akhir Footer -->
-    
+  
+<script scr="js/main.js"></script>
 </body>
 </html>

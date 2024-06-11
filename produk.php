@@ -14,7 +14,20 @@ if(isset($_GET['idkategori']))
     {
     $kategori_produk[]=$pecah;
     }
-}else
+}
+elseif(isset($_GET['keyword']))
+{
+    $keyword = $_GET['keyword'];
+
+    $cariproduk = array();
+    $ambil = koneksi()->query("SELECT * FROM produk
+        WHERE nama_produk LIKE '%$keyword%'");
+    while($pecah = $ambil->fetch_assoc())
+    {
+        $cariproduk[] = $pecah;
+    }
+}
+else
 {
     $produk = array();
     $ambil = koneksi()->query("SELECT * FROM produk JOIN kategori
@@ -25,6 +38,7 @@ if(isset($_GET['idkategori']))
       $produk[]=$pecah;
     }
 }
+
 
 ?>
 
@@ -55,8 +69,16 @@ if(isset($_GET['idkategori']))
 <section class="page-produk">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="index.php" class="link-secondary" style="text-decoration: none;">Home</a></li>
+            <li>
+                <a href="index.php" class="link-secondary" style="text-decoration: none;">
+                    Home
+                </a>
+            </li>
             <li>Product</li>
+            <?php if(isset($keyword)): ?>
+                <li><?php echo $keyword; ?></li>
+            <?php endif ?>
+            
         </ul>
 
         <div class="row">
@@ -84,9 +106,9 @@ if(isset($_GET['idkategori']))
                                     <div class="card-body ">
                                     <h6 class="card-title"><?php echo $value['nama_produk'] ?></h6>
                                     <p class="card-text">
-                                        $<?php echo number_format($value['harga_produk']);   ?>
+                                        Rp.<?php echo number_format($value['harga_produk']);   ?>
                                     </p>
-                                    <a href="beli.php?idproduk=<?php echo $value['id_produk']; ?>
+                                    <a href="buy.php?idproduk=<?php echo $value['id_produk']; ?>
                                     " class="btn " style="background-color:rgb(220, 0, 0); color:white;">
                                         <i class='bx bx-cart'></i>
                                     </a>
@@ -98,8 +120,38 @@ if(isset($_GET['idkategori']))
                             </div>
                         <?php endforeach ?>
 
+                        <?php elseif(isset($keyword)) : ?>
+
+                            <?php foreach ($cariproduk as $key => $value): ?>
+                            <div class="col-md-4 card-produk">
+                                <div class="card text-center">
+                                <img src="img/<?php echo $value['foto_produk']; ?>" class="card-img-top mt-2" alt="...">
+                                    <div class="card-body ">
+                                    <h6 class="card-title"><?php echo $value['nama_produk'] ?></h6>
+                                    <p class="card-text">
+                                        Rp.<?php echo number_format($value['harga_produk']);   ?>
+                                    </p>
+                                    <a href="buy.php?idproduk=<?php echo $value['id_produk']; ?>
+                                    " class="btn " style="background-color:rgb(220, 0, 0); color:white;">
+                                        <i class='bx bx-cart'></i>
+                                    </a>
+                                    <a href="detail_produk.php?idproduk=<?php echo $value['id_produk']; ?>" class="btn btn-primary">
+                                        Detail
+                                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
+
+                        <?php if(!empty($keyword)): ?>
+                            <div class="col-md-12">
+                                <div class="alert alert-danger shadow text-dark">
+                                    <p>Produk tidak ditemukan</p>
+                                </div>
+                            </div>
+                        <?php endif ?>
                     
-                    <?php else: ?>
+                        <?php else: ?>
 
                     <?php foreach ($produk as $key => $value): ?>
                         <div class="col-md-4 card-produk">
@@ -108,11 +160,8 @@ if(isset($_GET['idkategori']))
                                 <div class="card-body ">
                                 <h6 class="card-title"><?php echo $value['nama_produk'] ?></h6>
                                 <p class="card-text">
-                                    $<?php echo number_format($value['harga_produk']);   ?>
+                                    Rp.<?php echo number_format($value['harga_produk']);   ?>
                                 </p>
-                                <a href="beli.php?idproduk=<?php echo $value['id_produk']; ?>" class="btn " style="background-color:rgb(220, 0, 0); color:white;">
-                                    <i class='bx bx-cart'></i>
-                                </a>
                                 <a href="detail_produk.php?idproduk=<?php echo $value['id_produk']; ?>" class="btn btn-primary">
                                     Detail
                                 </a>
@@ -138,5 +187,6 @@ include 'include/footer.php';
 ?>
 <!-- Akhir Footer -->
     
+<script scr="js/main.js"></script>
 </body>
 </html>

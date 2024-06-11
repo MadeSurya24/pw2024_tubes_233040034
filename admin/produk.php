@@ -7,9 +7,6 @@ while($pecah = $ambil->fetch_assoc())
     $produk[] = $pecah;
 }
 
-// if(isset($_POST['cari'])){
-//     $produk = cari($_POST['keyword']);
-//   }
 
 ?>
 
@@ -23,7 +20,7 @@ while($pecah = $ambil->fetch_assoc())
 
 
 <div class="container-produk card shadow bg-white mt-3 p-5">
-    <table class="table table-boardered table-hover table-striped" id="tables">
+    <table class="table table-boardered table-hover table-striped">
         <thead>
             <tr>
                 <th>No</th>

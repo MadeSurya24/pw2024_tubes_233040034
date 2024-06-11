@@ -29,7 +29,7 @@ if(isset($_POST['simpan']))
     foreach ($nama_foto as $key => $tiap_nama)
     {
         $tiap_lokasi = $lokasi_foto[$key];
-        move_uploaded_file($tiap_lokasi, "../img" . $tiap_nama);
+        move_uploaded_file($tiap_lokasi, "../img/" . $tiap_nama);
 
         koneksi()->query("INSERT INTO foto_produk (id_produk, nama_foto_produk)
         VALUES('$id_baru','$tiap_nama')");
@@ -89,7 +89,7 @@ if(isset($_POST['simpan']))
                     <div class="input-foto">
                      <input type="file" name="foto[]" class="form-control" required>
                     </div>
-                    <span class="btn btn-sm btn-success btn-tambah">
+                    <span class="btn btn-sm btn-success btn-tambah mt-3">
                         <i class="fas fa-plus"></i>
                     </span>
                 </div>

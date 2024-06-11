@@ -17,12 +17,14 @@ while($pecah = $ambil->fetch_assoc())
 
 <div class="card shadow bg-white">
     <div class="card-body">
-        <table class="table table-boardered table-hover table-striped" id="tables">
+        <table class="table table-boardered table-hover table-striped">
             <thead>
             
                 <tr>
                     <th>No</th>
                     <th>Username</th>
+                    <th>Email</th>
+                    <th>No Hp</th>
                     <th>Opsi</th>
                 </tr>
             </thead>
@@ -31,9 +33,12 @@ while($pecah = $ambil->fetch_assoc())
           
                 <th width="50"><?php echo $key+1; ?></th>
                 <th><?php echo $value['username']; ?></th>
+                <th><?php echo $value['email']; ?></th>
+                <th><?php echo $value['no_telpon'] ; ?></th>
                 <th class="text-center" width="150">
-                    <a href="#" class="btn btn-sm btn-info">Hapus</a>
+                    <a href="admin.php?halaman=hapus_user&id=<?php echo $value['id_user']; ?>" class="btn btn-sm btn-info">Hapus</a>
                 </th>
+                
              
             </tbody>
             <?php endforeach ?>

@@ -1,18 +1,23 @@
 <?php 
-
-include '../assets/functions.php';
 session_start();
+
+// if(isset($_SESSION['login'])) {
+//   header("Location: index.php");
+//   exit;
+// }
+
+require '../assets/functions.php';
 
 if(isset($_POST['login']))
 
 {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = sha1($_POST['password']);
     // $username = $_POST['username'];
     // $password = sha1($_POST['password']);
 
-    $ambil = koneksi()->query("SELECT * FROM user
-                               WHERE username='$username' AND password='$password'");
+    $ambil = koneksi()->query("SELECT * FROM admin
+                               WHERE email='$email' AND password='$password'");
     // $ambil = koneksi()->query("SELECT * FROM admin
     //                            WHERE username='$username' AND password='$password'");
 
@@ -20,7 +25,7 @@ if(isset($_POST['login']))
 
     if($akun==1)
     {
-        $_SESSION['user'] = $ambil->fetch_assoc();
+        $_SESSION['admin'] = $ambil->fetch_assoc();
         echo "<script>alert('login berhasil');</script>";
         echo "<script>location='admin.php';</script>";
     }
@@ -34,82 +39,55 @@ if(isset($_POST['login']))
 ?>
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <title>Admin Login</title>
+<!-- Style CSS -->
+<link rel="stylesheet" href="../css/registerlogin.css">
 
-    <!-- Custom fonts for this template-->
-    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <!-- Custom styles for this template-->
-    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+
+    <title>Halaman Login</title>
 </head>
+<body>
+    <!-- <h1>Halaman Login</h1> -->
 
-<body class="bg-gradient-primary">
-<br><br>
     <div class="container">
+      <?php if( isset($login['error'])) : ?>
+          <p style="color: red; font-style:italic;">Username / Password Salah</p>
+      <?php endif; ?>
 
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
+        <form action="" method="POST" class="mx-auto">
+            <h4 class="text-center">Login</h4>
 
-            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="exampleInputUsername" class="form-label">Email</label>
+                <input type="text" name="email" class="form-control" id="exampleInputEmail" placeholder="Masukan Email" required>
+              </div>
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                    <form method="POST" class="user">
-                                        <div class="form-group">
-                                            <input type="text" name="username" class="form-control form-control-user"
-                                                placeholder="Enter Username">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
-                                        </div>
-                                        
-                                        <button name="login" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Masukan Password" required>
+              </div>
 
-            </div>
+              <div class="mb-3 form-check">
+                <p class="login-register-text mt-3">
+                  Don't Have an Account?
+                    <a href="registrasi.php"  class="text-decoration-none">Register</a>
+                </p>
+              </div>
 
-        </div>
-
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="../assets/js/sb-admin-2.min.js"></script>
-
+              <div>
+                <button type="submit" name="login" class="btn btn-primary">Login</button>
+              </div>
+              
+        </form>
 </body>
-
 </html>

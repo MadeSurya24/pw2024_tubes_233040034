@@ -12,10 +12,7 @@
           <img src="img/<?php echo $value['foto_produk']; ?>" class="card-img-top mt-2" alt="...">
             <div class="card-body ">
               <h6 class="card-title"><?php echo $value['nama_produk'] ?></h6>
-              <p class="card-text">$<?php echo number_format($value['harga_produk']);   ?></p>
-              <a href="beli.php?idproduk=<?php echo $value['id_produk']; ?>" class="btn " style="background-color:rgb(220, 0, 0); color:white;" >
-                  <i class='bx bx-cart'></i>
-              </a>
+              <p class="card-text">Rp.<?php echo number_format($value['harga_produk']);   ?></p>
               <a href="detail_produk.php?idproduk=<?php echo $value['id_produk']; ?>" class="btn btn-primary">
                   Detail
               </a>

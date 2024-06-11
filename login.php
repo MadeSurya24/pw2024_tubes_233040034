@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+session_start();
 
 // if(isset($_SESSION['login'])) {
 //   header("Location: index.php");
@@ -8,8 +8,32 @@
 
 require 'assets/functions.php';
 
-if( isset($_POST["login"])) {
-  $login = login($_POST);
+if(isset($_POST['login']))
+
+{
+    $email = $_POST['email'];
+    $password = sha1($_POST['password']);
+    // $username = $_POST['username'];
+    // $password = sha1($_POST['password']);
+
+    $ambil = koneksi()->query("SELECT * FROM user
+                               WHERE email='$email' AND password='$password'");
+    // $ambil = koneksi()->query("SELECT * FROM admin
+    //                            WHERE username='$username' AND password='$password'");
+
+    $akun = $ambil->num_rows;
+
+    if($akun==1)
+    {
+        $_SESSION['user'] = $ambil->fetch_assoc();
+        echo "<script>alert('login berhasil');</script>";
+        echo "<script>location='index.php';</script>";
+    }
+    else
+    {
+        echo "<script>alert('login gagal');</script>";
+        echo "<script>location='login.php';</script>";
+    }
 }
 
 ?>
@@ -43,19 +67,14 @@ if( isset($_POST["login"])) {
         <form action="" method="POST" class="mx-auto">
             <h4 class="text-center">Login</h4>
 
-              <!-- <div class="mb-3 mt-5">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              </div> -->
-
               <div class="mb-3">
-                <label for="exampleInputUsername" class="form-label">Username</label>
-                <input type="username" name="username" class="form-control" id="exampleInputUsername">
+                <label for="exampleInputUsername" class="form-label">Email</label>
+                <input type="text" name="email" class="form-control" id="exampleInputEmail" placeholder="Masukan Email" required>
               </div>
 
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Masukan Password" required>
               </div>
 
               <div class="mb-3 form-check">
@@ -66,7 +85,7 @@ if( isset($_POST["login"])) {
               </div>
 
               <div>
-                <button type="submit" name="login" class="btn btn-primary" >Login</button>
+                <button type="submit" name="login" class="btn btn-primary">Login</button>
               </div>
               
         </form>
